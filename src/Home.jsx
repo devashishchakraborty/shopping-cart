@@ -1,5 +1,5 @@
 const Home = () => (
-    <div>
+    <div className="heroSection">
       Hello from the home page of the app!
     </div>
   );

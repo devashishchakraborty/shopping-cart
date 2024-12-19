@@ -1,3 +1,6 @@
+#root, .appContainer{
+  height: 100%;
+}
 .appContainer{
   display: flex;
   flex-direction: column;
@@ -5,6 +8,7 @@
 
 h1, h2{
   margin: 0;
+  font-weight: 500;
 }
 
 header{
@@ -31,14 +35,33 @@ header{
   }
 }
 
-nav{
+.headerNavigation{
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 100px;
 
   img{
     height: 2em;
     width: 2em;
     display: block;
   }
+  
+  nav{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+main{
+  flex: 1;
+}
+
+.heroSection{
+  background-image: url(./assets/background-tshirt.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 120%;
+  height: 100%;
 }
