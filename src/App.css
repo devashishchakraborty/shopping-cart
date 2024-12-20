@@ -56,12 +56,3 @@ header{
 main{
   flex: 1;
 }
-
-.heroSection{
-  background-image: url(./assets/background-tshirt.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 120%;
-  height: 100%;
-}

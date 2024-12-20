@@ -1,0 +1,70 @@
+.heroSection{
+    background-image: url(./assets/background-tshirt.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 120%;
+    height: 100%;
+    padding: 64px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.welcomeMessage{
+    font-size: 2em;
+}
+
+.heroSection .content{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 50%;
+
+    .tagline{
+        width: 75%;
+    }
+}
+
+.heroSectionBtns{
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.shopNowBtn{
+    padding: 0.8em 2.4em;
+    border-radius: 16px;
+    color: #d3d8eb;
+    /* color: #8a8166; */
+    font-weight: bold;
+    background-color: #3a4b54;
+}
+
+.shopNowBtn:hover{
+    filter: brightness(90%);
+    border-color: none;
+    outline: none;
+}
+
+.aboutUsBtn{
+    color: #3a4b54;
+}
+
+.aboutUsBtn:hover{
+    filter: brightness(75%);
+}
+
+.scrollDown{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    font-size: 15px;
+    color: #213547;
+    bottom: 10px;
+    left: 0; 
+    right: 0; 
+    margin-inline: auto; 
+    width: fit-content;
+    user-select: none; 
+}
