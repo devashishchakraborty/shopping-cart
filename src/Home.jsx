@@ -3,6 +3,7 @@ import "./Home.css";
 import scrollDownIcon from "./assets/scrolldownicon.svg";
 
 const Home = () => (
+  <>
     <div className="heroSection">
       <div className="content">
         <div className="welcomeMessage">
@@ -22,8 +23,17 @@ const Home = () => (
           <img src={scrollDownIcon} alt="" />
           scroll down
       </div>
-
     </div>
-  );
+    <div className="featuredProducts">
+      <h1 className="sectionTitle">Featured</h1>
+      <div className="products">
+        <div className="product">Product 1</div>
+        <div className="product">Product 2</div>
+        <div className="product">Product 3</div>
+        <div className="product">Product 4</div>
+      </div>
+    </div>
+  </>
+);
 
 export default Home;
