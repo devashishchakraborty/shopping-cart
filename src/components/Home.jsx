@@ -1,18 +1,11 @@
 import { Link } from "react-router-dom";
-import "./Home.css";
-import scrollDownIcon from "./assets/scrolldownicon.svg";
+import "../styles/Home.css";
+import scrollDownIcon from "../assets/scrolldownicon.svg";
 import { useOutletContext } from "react-router-dom";
+import { generateStars, trimTitle } from "../Utils";
 
 const Home = () => {
-  const { products, setCart } = useOutletContext(); // Access the passed props
-  const handleAddToCart = (id) => {
-    setCart((prev) =>
-      Object.keys(prev).includes(id)
-        ? { ...prev, id: prev[id] + 1 }
-        : { ...prev, id: 1 }
-    );
-  };
-
+  const { products, addToCart } = useOutletContext(); // Access the passed props
   return (
     <>
       <div className="heroSection">
@@ -46,14 +39,24 @@ const Home = () => {
           {products &&
             products.slice(16, 20).map((product) => (
               <div className="product" key={product.id}>
-                <img
-                  className="image"
-                  src={product.image}
-                  alt={product.title}
-                />
-                <div className="name">{product.title}</div>
+                <div className="imgContainer">
+                  <img
+                    className="image"
+                    src={product.image}
+                    alt={product.title}
+                  />
+                </div>
+                <div className="name" title={product.title}>{trimTitle(product.title)}</div>
+                <div className="rating">
+                  <div className="ratedValue" title={product.rating.rate}>
+                    {generateStars(product.rating.rate).map((star, index) => (
+                      <img key={index} src={star} alt="" />
+                    ))}
+                  </div>
+                  <div className="ratedCount">({product.rating.count})</div>
+                </div>
                 <h2 className="price">${product.price}</h2>
-                <button onClick={() => handleAddToCart(product.id)}>
+                <button onClick={() => addToCart(product.id)}>
                   + Add to Cart
                 </button>
               </div>

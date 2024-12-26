@@ -1,0 +1,41 @@
+footer{
+  display: flex;
+  background-color: #213547;
+  color: white;
+  padding: 64px;
+  gap: 16px;
+  justify-content: space-between;
+
+  a{
+    color: #B1B5FF;
+  }
+
+  a:hover{
+    color: #8A90FF;
+  }
+}
+
+footer div{
+  max-width: 500px;
+  
+  p{
+    margin: 0;
+  }
+}
+
+footer div h3::after{
+  background-color: lightgray; 
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  width: 48px;
+  margin-top: 8px;
+}
+
+
+.quickLinks, .contactInfo, .aboutOdinShop{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
