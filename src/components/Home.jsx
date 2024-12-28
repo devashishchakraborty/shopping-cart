@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import "../styles/Home.css";
+import { Link, useOutletContext } from "react-router-dom";
 import scrollDownIcon from "../assets/scrolldownicon.svg";
-import { useOutletContext } from "react-router-dom";
-import { generateStars, trimTitle } from "../Utils";
+import "../styles/Home.css";
+import Product from "./Product";
 
 const Home = () => {
-  const { products, addToCart } = useOutletContext(); // Access the passed props
+  const { products, cart, addToCart, removeFromCart } = useOutletContext(); // Access the passed props
+
   return (
     <>
       <div className="heroSection">
@@ -37,30 +37,16 @@ const Home = () => {
         <h1 className="sectionTitle">Featured</h1>
         <div className="products">
           {products &&
-            products.slice(16, 20).map((product) => (
-              <div className="product" key={product.id}>
-                <div className="imgContainer">
-                  <img
-                    className="image"
-                    src={product.image}
-                    alt={product.title}
-                  />
-                </div>
-                <div className="name" title={product.title}>{trimTitle(product.title)}</div>
-                <div className="rating">
-                  <div className="ratedValue" title={product.rating.rate}>
-                    {generateStars(product.rating.rate).map((star, index) => (
-                      <img key={index} src={star} alt="" />
-                    ))}
-                  </div>
-                  <div className="ratedCount">({product.rating.count})</div>
-                </div>
-                <h2 className="price">${product.price}</h2>
-                <button onClick={() => addToCart(product.id)}>
-                  + Add to Cart
-                </button>
-              </div>
-            ))}
+            products
+              .slice(16, 20)
+              .map((product) => (
+                <Product
+                  product={product}
+                  cart={cart}
+                  addToCart={addToCart}
+                  removeFromCart={removeFromCart}
+                />
+              ))}
         </div>
         <Link to="/shop">
           <button className="viewAll">View All</button>
