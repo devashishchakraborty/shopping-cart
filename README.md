@@ -10,7 +10,7 @@ This project was designed to strengthen my understanding of React fundamentals, 
 
 Feel free to explore and interact with the app—I’m excited to share this milestone in my web development journey! 🚀
 
-- Live -> 
+Live Preview -> [Here](https://shopping-cart-e4c.pages.dev/)
 
 ## Screenshots
 ![image](https://github.com/user-attachments/assets/3f853f42-7c73-45aa-9d68-43cb52b21c99)
