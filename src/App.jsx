@@ -21,7 +21,7 @@ const App = () => {
   }, []);
 
   // Merged two functionalities into One for simplicity
-  const modifyCart = (itemId, type, removeAll = true, quantity = 69) => {
+  const modifyCart = (itemId, type, quantity = null) => {
     if (type === "add") {
       setCart((prev) =>
         Object.keys(prev).includes(itemId.toString())
@@ -30,7 +30,7 @@ const App = () => {
       );
     } else if (type === "remove") {
       setCart((prev) => {
-        if (!removeAll && +prev[itemId] > 1)
+        if (quantity === 1 && +prev[itemId] > 1)
           return { ...prev, [itemId]: +prev[itemId] - 1 };
 
         let temp = { ...prev };

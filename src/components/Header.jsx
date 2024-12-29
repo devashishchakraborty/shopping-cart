@@ -28,7 +28,7 @@ const Header = ({ cart }) => {
         <Link to="cart">
           <img src={CartLogo} alt="Shopping Cart" />
           <div className="totalItems">
-            {Object.values(cart).reduce((sum, num) => sum + num, 0)}
+            {Object.values(cart).reduce((sum, num) => sum + +num, 0)}
           </div>
         </Link>
       </div>
