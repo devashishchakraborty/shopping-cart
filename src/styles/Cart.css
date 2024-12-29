@@ -1,0 +1,134 @@
+.cartContainer{
+  display: grid;
+  padding: 64px;
+  gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+
+}
+
+.items{
+  display: flex;
+  flex-direction: column;
+  min-width: min-content;
+  grid-column: span 3;
+  border: 2px solid lightgray;
+  padding: 16px;
+  border-radius: 8px;
+
+  h1{
+    border-bottom: 2px solid var(--dark-blue);
+  }
+}
+
+.item+.item{
+  border-top: 2px solid lightgray;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 100px repeat(3, 1fr) 100px;
+  grid-template-rows: repeat(2, 1fr);
+  padding: 16px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.item .image{
+  width: 80px;
+  height: 80px;
+  grid-row: span 2;
+  display: flex;
+  align-items: center;
+}
+
+.item .image img{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.item .name{
+  grid-column: span 3;
+}
+
+.item .price{
+  grid-area: 2 / 2;
+}
+
+.item .quantity{
+  grid-area: 2 / 3;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  button{
+    border-radius: 4px;
+    transition: 0.2s ease transform;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3em 0.6em;
+
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+}
+
+.item .totalPrice {
+  grid-area: 2 / 4;
+}
+
+.deleteBtn{
+  border-radius: 50%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: 1 / 5 / span 2;
+  align-self: center;
+  justify-self: end;
+  border: 2px solid crimson;
+  background-color: white;
+  transition: 0.25s ease background-color;
+}
+
+.deleteBtn:hover{
+  background-color: crimson;
+
+  img {
+    filter: invert(97%) sepia(97%) saturate(11%) hue-rotate(197deg)
+      brightness(105%) contrast(102%);
+  }
+}
+
+.checkoutSection {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  padding: 16px;
+  border: 2px solid lightgray;
+  border-radius: 8px;
+  
+  h1{
+    border-bottom: 2px solid var(--dark-blue);
+  }
+
+  div{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .checkoutBtn{
+    border-radius: 2px;
+    background-color: #40ab5d;
+    color: white;
+  }
+
+  .checkoutBtn:hover{
+    filter: brightness(90%);
+  }
+}
+

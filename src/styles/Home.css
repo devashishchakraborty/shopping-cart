@@ -60,7 +60,7 @@
   gap: 16px;
   position: absolute;
   font-size: 15px;
-  color: #213547;
+  color: var(--dark-blue);
   bottom: 10px;
   left: 0;
   right: 0;
@@ -113,8 +113,8 @@
 
 .viewAll,
 .addToCartBtn {
-  color: #213547;
-  border: 2px solid #213547;
+  color: var(--dark-blue);
+  border: 2px solid var(--dark-blue);
   background-color: white;
   padding: 0.8em 2.4em;
   border-radius: 16px;
@@ -124,5 +124,5 @@
 
 .viewAll:hover {
   color: white;
-  background-color: #213547;
+  background-color: var(--dark-blue);
 }

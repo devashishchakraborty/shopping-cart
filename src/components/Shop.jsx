@@ -13,8 +13,7 @@ const Shop = () => {
     category,
     setOrder,
     setCategory,
-    addToCart,
-    removeFromCart,
+    modifyCart,
   } = useOutletContext(); // Access the passed props
 
   useEffect(() => {
@@ -84,10 +83,10 @@ const Shop = () => {
           sortedProducts(order, filteredProducts(category, products)).map(
             (product) => (
               <Product
+                key={product.id} 
                 product={product}
                 cart={cart}
-                addToCart={addToCart}
-                removeFromCart={removeFromCart}
+                modifyCart={modifyCart}
               />
             )
           )}

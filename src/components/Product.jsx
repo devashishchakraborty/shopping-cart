@@ -2,9 +2,12 @@ import { trimTitle, generateStars } from "../Utils";
 import removeItem from "../assets/remove-shopping-cart.svg";
 import "../styles/Product.css";
 
-const Product = ({ product, cart, addToCart, removeFromCart }) => {
+const Product = ({ product, cart, modifyCart }) => {
   return (
-    <div className="product" key={product.id}>
+    <div className="product">
+      {cart[product.id] && (
+        <div className="itemCountInCart">{cart[product.id]}</div>
+      )}
       <div className="imgContainer">
         <img className="image" src={product.image} alt={product.title} />
       </div>
@@ -21,13 +24,13 @@ const Product = ({ product, cart, addToCart, removeFromCart }) => {
       </div>
       <h2 className="price">${product.price}</h2>
       <div className="btns">
-        <button className="addToCartBtn" onClick={() => addToCart(product.id)}>
+        <button className="addToCartBtn" onClick={() => modifyCart(product.id, "add")}>
           Add to Cart
         </button>
         {Object.keys(cart).includes(product.id.toString()) && (
           <button
             className="removeItemBtn"
-            onClick={() => removeFromCart(product.id)}
+            onClick={() => modifyCart(product.id, "remove")}
           >
             <img src={removeItem} alt="" />
           </button>

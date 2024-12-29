@@ -4,7 +4,7 @@ import "../styles/Home.css";
 import Product from "./Product";
 
 const Home = () => {
-  const { products, cart, addToCart, removeFromCart } = useOutletContext(); // Access the passed props
+  const { products, cart, modifyCart } = useOutletContext(); // Access the passed props
 
   return (
     <>
@@ -41,10 +41,10 @@ const Home = () => {
               .slice(16, 20)
               .map((product) => (
                 <Product
+                  key={product.id}
                   product={product}
                   cart={cart}
-                  addToCart={addToCart}
-                  removeFromCart={removeFromCart}
+                  modifyCart={modifyCart}
                 />
               ))}
         </div>

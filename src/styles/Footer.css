@@ -1,6 +1,6 @@
 footer{
   display: flex;
-  background-color: #213547;
+  background-color: var(--dark-blue);
   color: white;
   padding: 64px;
   gap: 16px;

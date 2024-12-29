@@ -4,7 +4,7 @@ header{
   align-items: center;
   height: 10vh;
   padding: 0px 64px;
-  background-color: #213547;
+  background-color: var(--dark-blue);
   color: white;
   justify-content: space-between;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
