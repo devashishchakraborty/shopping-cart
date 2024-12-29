@@ -4,9 +4,11 @@ import removeItem from "../assets/delete-outline.svg";
 
 const Cart = () => {
   const { products, cart, modifyCart } = useOutletContext(); // Access the passed props
+  
   const itemsInCart = products.filter((product) =>
     Object.keys(cart).includes(product.id.toString())
   );
+
   const totalAmount = itemsInCart.reduce(
     (total, item) => total + +cart[item.id] * +item.price,
     0
