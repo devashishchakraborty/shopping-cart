@@ -77,6 +77,19 @@
   }
 }
 
+.itemCount{
+  -moz-appearance: textfield;
+  appearance: textfield;
+  width: 36px; 
+  padding: 5px;
+}
+
+.itemCount::-webkit-outer-spin-button,
+.itemCount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .item .totalPrice {
   grid-area: 2 / 4;
 }

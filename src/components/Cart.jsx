@@ -35,11 +35,11 @@ const Cart = () => {
                   <div className="quantity">
                     <button
                       className="subtractOne"
-                      onClick={() => modifyCart(item.id, "remove", false)}
+                      onClick={() => modifyCart(item.id, "remove", removeAll=false)}
                     >
                       -
                     </button>
-                    {cart[item.id]}
+                    <input type="number" className="itemCount" name="itemCount" id="itemCount" value={cart[item.id]} onChange={(e) => modifyCart(item.id, "modify",true, e.target.value)}/> 
                     <button
                       className="addOne"
                       onClick={() => modifyCart(item.id, "add")}

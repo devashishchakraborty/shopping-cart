@@ -21,11 +21,11 @@ const App = () => {
   }, []);
 
   // Merged two functionalities into One for simplicity
-  const modifyCart = (itemId, type, removeAll = true) => {
+  const modifyCart = (itemId, type, removeAll = true, quantity = 69) => {
     if (type === "add") {
       setCart((prev) =>
         Object.keys(prev).includes(itemId.toString())
-          ? { ...prev, [itemId]: prev[itemId] + 1 }
+          ? { ...prev, [itemId]: +prev[itemId] + 1 }
           : { ...prev, [itemId]: 1 }
       );
     } else if (type === "remove") {
@@ -37,6 +37,8 @@ const App = () => {
         delete temp[itemId];
         return temp;
       });
+    } else if (type === "modify" && quantity > 0 && quantity < 1000) {
+      setCart((prev) => ({ ...prev, [itemId]: quantity }));
     }
   };
 
