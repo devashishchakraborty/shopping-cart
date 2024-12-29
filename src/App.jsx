@@ -20,31 +20,61 @@ const App = () => {
     fetchProducts();
   }, []);
 
+  // Merged two functionalities into One for simplicity
+  const modifyCart = (itemId, type, removeAll = true) => {
+    if (type === "add") {
+      setCart((prev) =>
+        Object.keys(prev).includes(itemId.toString())
+          ? { ...prev, [itemId]: prev[itemId] + 1 }
+          : { ...prev, [itemId]: 1 }
+      );
+    } else if (type === "remove") {
+      setCart((prev) => {
+        if (!removeAll && +prev[itemId] > 1)
+          return { ...prev, [itemId]: +prev[itemId] - 1 };
 
-  // Setting the cart with id of the item as key with the quantity in value
-  const addToCart = id => setCart(prev => (
-    Object.keys(prev).includes(id.toString())
-      ? { ...prev, [id]: prev[id] + 1 }
-      : { ...prev, [id]: 1 }
-  ))
+        let temp = { ...prev };
+        delete temp[itemId];
+        return temp;
+      });
+    }
+  };
 
-  // Removing the item from the cart
-  const removeFromCart = id => setCart(prev => {
-    let temp = {...prev};
-    if (Object.keys(temp).includes(id.toString())) delete temp[id];
-    return temp;
-  })
+  // // Setting the cart with id of the item as key with the quantity in value
+  // const addToCart = (id) =>
+  //   setCart((prev) =>
+  //     Object.keys(prev).includes(id.toString())
+  //       ? { ...prev, [id]: prev[id] + 1 }
+  //       : { ...prev, [id]: 1 }
+  //   );
 
+  // // Removing the item from the cart
+  // const removeFromCart = (id, quantity = "all") =>
+  //   setCart((prev) => {
+  //     let temp = { ...prev };
+  //     if (Object.keys(temp).includes(id.toString())) delete temp[id];
+  //     return temp;
+  //   });
 
-return (
-  <div className="appContainer">
-    <Header cart={cart} />
-    <main>
-      <Outlet context={{ products, cart, order, category, setOrder, setCategory, addToCart, removeFromCart }} />
-    </main>
-    <Footer />
-  </div>
-);
+  return (
+    <div className="appContainer">
+      <Header cart={cart} />
+      <main>
+        <Outlet
+          context={{
+            products,
+            cart,
+            order,
+            category,
+            setOrder,
+            setCategory,
+            modifyCart,
+          }}
+        />
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default App;
