@@ -6,7 +6,7 @@ const Product = ({ product, cart, modifyCart }) => {
   return (
     <div className="product">
       {cart[product.id] && (
-        <div className="itemCountInCart">{cart[product.id]}</div>
+        <div className="itemCountInCart">Qty: {cart[product.id]}</div>
       )}
       <div className="imgContainer">
         <img className="image" src={product.image} alt={product.title} />
