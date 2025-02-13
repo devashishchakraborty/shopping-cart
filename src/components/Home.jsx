@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <div className="heroSectionContainer">
-        <img className="backgroundImage" src={backgroundImage} alt="" />
+        <img className="backgroundImage" src={backgroundImage} alt="" style={{objectFit: 'cover'}}/>
         <div className="heroSection">
           <div className="content">
             <div className="welcomeMessage">
