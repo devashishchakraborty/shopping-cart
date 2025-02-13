@@ -1,6 +1,6 @@
 # OdinShop
 ## About
-Welcome to my Shopping Cart project, a culmination of my learning journey with The Odin Project! This web application is built using **React** and leverages the **React Router** library to create a seamless user experience. The project features three main pages:  
+Welcome to my Shopping Cart project, a culmination of my web dev learning journey! This web application is built using **React** and leverages the **React Router** library to create a seamless user experience. The project features three main pages:  
 
 - **Home Page**: A welcoming landing page that introduces the app and its purpose.  
 - **Shop Page**: Browse through a variety of items, add them to your cart, and see your selections update in real-time.  

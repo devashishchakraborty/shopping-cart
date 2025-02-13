@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import "../styles/Cart.css";
 import removeItem from "../assets/delete-outline.svg";
+import { useMemo } from "react";
 
 const Cart = () => {
   const { products, cart, modifyCart } = useOutletContext(); // Access the passed props
@@ -9,13 +10,16 @@ const Cart = () => {
     Object.keys(cart).includes(product.id.toString())
   );
 
-  const totalAmount = itemsInCart.reduce(
-    (total, item) => total + +cart[item.id] * +item.price,
-    0
-  );
+  const totalAmount = useMemo(() => {
+    return itemsInCart.reduce(
+      (total, item) => total + +cart[item.id] * +item.price,
+      0
+    );
+  }, [cart]);
+
 
   const handleCheckout = (e) => {
-    alert("Thanks for using this website! This Project was built following TheOdinProject. The Checkout functionality is not Added Yet.")
+    alert("Thanks for using this website! The Checkout functionality is not Added Yet.")
   }
 
   return (

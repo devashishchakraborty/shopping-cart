@@ -1,7 +1,5 @@
 import "../styles/Shop.css";
 import { useOutletContext } from "react-router-dom";
-import { generateStars, trimTitle } from "../Utils";
-import removeItem from "../assets/remove-shopping-cart.svg";
 import { useEffect } from "react";
 import Product from "./Product";
 
