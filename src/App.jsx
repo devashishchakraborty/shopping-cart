@@ -4,11 +4,13 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+
 const App = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState("relevance");
   const [category, setCategory] = useState("all");
+
 
   useEffect(() => {
     const fetchProducts = async () => {

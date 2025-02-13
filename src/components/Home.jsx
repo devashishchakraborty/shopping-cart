@@ -3,14 +3,32 @@ import scrollDownIcon from "../assets/scrolldownicon.svg";
 import backgroundImage from "../assets/background-tshirt.jpg";
 import "../styles/Home.css";
 import Product from "./Product";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const { products, cart, modifyCart } = useOutletContext(); // Access the passed props
+  const [isBgImageLoaded, setIsBgImageLoaded] = useState(false);
+  useEffect(() => {
+    const bgImg = new Image();
+    bgImg.src = backgroundImage;
+    bgImg.onload = () => {
+      setIsBgImageLoaded(true);
+    };
+  }, []);
 
   return (
     <>
       <div className="heroSectionContainer">
-        <img className="backgroundImage" src={backgroundImage} alt="" style={{objectFit: 'cover'}}/>
+        {isBgImageLoaded ? (
+          <img className="backgroundImage" src={backgroundImage} alt="" />
+        ) : (
+          <div
+            className="backgroundImage"
+            style={{
+              backgroundColor: "#f0f0f0",
+            }}
+          />
+        )}
         <div className="heroSection">
           <div className="content">
             <div className="welcomeMessage">
